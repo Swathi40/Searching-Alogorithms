@@ -1,0 +1,19 @@
+#Interpolation search#
+L=[6,7,10,11,19,30,50,70]
+target=30
+low=0
+high=len(L)-1
+while low<=high and L[low]<=target<=L[high]:
+    ind = low + int((high - low) * (target - L[low]) / (L[high] - L[low]))
+    if L[ind]>target:
+        high=ind-1
+    elif L[ind]<target:
+        low=ind+1
+    elif L[ind]==target:
+        print(ind)
+        break
+else:
+    print(-1)
+
+#Output#
+5
